@@ -25,6 +25,7 @@ export default function QrScanner() {
 
   return (
     <div>
+      div
       <div id="reader"></div>
     </div>
   );
