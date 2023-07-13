@@ -1,10 +1,10 @@
-from cgi import print_directory
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from .env import settings
 
-SQLALCHEMY_DATABASE_URL = settings.sql_url
+from .env import settings
+#Basin configuration for connecting to database
+SQLALCHEMY_DATABASE_URL = settings.DB_URL
 print(SQLALCHEMY_DATABASE_URL)
 
 

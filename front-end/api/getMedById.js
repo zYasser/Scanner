@@ -1,13 +1,14 @@
 import fetch from "node-fetch";
 
 export const getMedById = (id) => {
-  console.log(id);
-  fetch(`http://localhost:8000/v1/api/med?medId=${id}`, { method: "GET" })
-    .then((data) => {
-      return data;
+  return fetch(`http://localhost:8000/v1/api/med?medId=${id}`, {
+    method: "GET",
+  })
+    .then((response) => {
+      return response.json();
     })
     .catch((err) => {
       console.log(err);
-      return err;
+      throw err;
     });
 };

@@ -12,7 +12,7 @@ origins = [
     "http://localhost:3000",
 ]
 
-
+# Middleware for CORS
 app = FastAPI()
 medicine.Base.metadata.create_all(bind=engine)
 app.add_middleware(
