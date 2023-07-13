@@ -20,15 +20,17 @@ export default function QrScanner() {
   const router = useRouter();
   useEffect(() => {
     const scanner = new Html5QrcodeScanner("reader", {
+      //Use this property to limit the region of the viewfinder you want to use for scanning.
+
       qrbox: qrboxFunction,
       rememberLastUsedCamera: true,
+      //frame per second, the speed of scanning, HIGH speed will effect performence
 
-      fps: 30,
+      fps: 5,
     });
     scanner.render(
       (res) => {
-        //router.push(`/med/${res}`);
-        console.log(res);
+        router.push(`/med/${res}`);
       },
       (err) => {
         console.log(err);
